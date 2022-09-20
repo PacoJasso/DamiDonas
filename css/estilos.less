@@ -1,10 +1,256 @@
-.contenedor{
-    background: #000;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
+/*----------------------------*/
+        /*VARIABLES*/
+/*----------------------------*/
 
-    h1{
-        color: antiquewhite;
+/*Colores*/
+@negro-custom: #141618;
+@blanco: #fff;
+@texto-oscuro: #303133;
+@texto-claro: #777;
+@dorado: #b4975a;
+@gris-claro: #eaeaea;
+
+/*Fuentes*/
+@fuente-encabezado: 'Sriracha', cursive;
+@fuente-principal: 'Fira Sans Extra Condensed', sans-serif;
+@fuente-secundaria: 'Cambay', sans-serif;
+
+/*----------------------------*/
+        /*GENERALES*/
+/*----------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: @fuente-principal;
+    color: @texto-oscuro
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+img{
+    vertical-align: top;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: @texto-oscuro;
+    transition: all .3s ease;
+
+    &:hover{
+        color: fade(@texto-oscuro,50%)
+    }
+}
+
+.titulo-seccion{
+    h2{
+      font-size: 3.125rem;
+      font-weight: 800;
+      line-height: 3.6875rem;
+      margin-bottom: 1.125rem;
+      letter-spacing: -0.02em; 
+    }
+
+    p{
+        font-family: @fuente-secundaria;
+        font-size: 1.25rem;
+        color: #777
+    }
+}
+
+/*----------------------------*/
+        /*ENCABEZADO*/
+/*----------------------------*/
+
+header{
+    .menu-bar-pc{
+        background: @blanco;
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        top:0;
+        padding: 0 2.25rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 5.875rem;
+        border-bottom: 1px solid @gris-claro;
+
+        .logo{
+            max-width: 3.125rem;
+        }
+        .menu-principal{
+            a{
+                padding: 0  0.5625rem;
+                font-size: 1.2rem;
+            }
+        }
+        .top-redes{
+            a{
+                padding: 0 0.5625rem;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+
+/*----------------------------*/
+        /*ENCABEZADO*/
+/*----------------------------*/
+
+.main{
+    margin-top: 5.875rem;
+
+    /*Portada*/
+    .portada{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        min-height: 90vh;
+
+        .col{
+            width: 50%;
+            background: @negro-custom;
+            color: @blanco;
+            display: flex;
+            flex-wrap: wrap;
+
+            .foto{
+                background-size: cover;
+                background-position: center;
+                width: 50%;
+
+                &.izq{
+                    background-image: url(../img/1.jpg);
+                    background-position: left;
+                }
+
+                &.der{
+                    background-image: url(../img/2.jpg);
+                }
+
+                .overlay{
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: fade(@negro-custom, 40%);
+                    position: relative;
+                    cursor: pointer;
+                    transition: all .3s ease;
+
+                    &:hover{
+                        opacity: 1;
+                    }
+
+                    i{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 1.9rem;
+                    }
+                }
+            }
+
+            .texto{
+                width: 50%;
+                padding: 3.375rem;
+
+                h2{
+                    font-size: 2.8rem;
+                    font-weight: 800;
+                    line-height: 2.6875;
+                    margin-bottom: 1.125rem;
+                }
+
+                p{
+                    font-size: 1rem;
+                    line-height: 1.75;
+                    font-family: @fuente-secundaria;
+                }
+            }
+
+            .foto-full{
+                width: 100%;
+                min-height: 15.25rem;
+                background-size: cover;
+                background-position: center;
+
+                &.izq{
+                    background-image: url(../img/3.jpg);
+                }
+
+                &.der{
+                    background-image: url(../img/4.jpg);
+                }
+
+                .overlay{
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: fade(@negro-custom, 40%);
+                    position: relative;
+                    cursor: pointer;
+                    transition: all .3s ease;
+
+                    &:hover{
+                        opacity: 1;
+                    }
+
+                    i{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 1.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    /*Nosotros*/
+    .nosotros{
+        padding: 5.625rem 0;
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .col.izq{
+                width: 30%;
+                border-right: 1px solid @gris-claro;
+                display: flex;
+                align-items: center;
+                padding-right: 5%;
+            }
+
+            .col.der{
+                width: 70%;
+                padding-left: 5%;
+
+                .texto{
+                    p{
+                        font-size: 1.125rem;
+                        line-height: 1.75;
+                        color:@texto-claro;
+                        font-family: @fuente-secundaria;
+                    }
+                }
+            }
+        }
     }
 }
