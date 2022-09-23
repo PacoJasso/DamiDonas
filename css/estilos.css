@@ -395,6 +395,7 @@ header .menu-bar-mobile .slideMenu .menu-principal a {
   background-image: url(../img/damiDonasContacto.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .main .contacto .datos .overlay {
   position: absolute;
