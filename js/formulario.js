@@ -1,4 +1,4 @@
-
+(function(){
 //Objeto con Propiedades de Parallax
 var propFormulario = {
 
@@ -64,3 +64,5 @@ var metFormulario = {
 }
 
 metFormulario.inicio();
+
+}());
